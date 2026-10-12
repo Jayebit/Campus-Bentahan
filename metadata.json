@@ -1,0 +1,8 @@
+{
+  "name": "Campus Bentahan",
+  "description": "Campus-based marketplace system for buying, selling, and negotiating academic and personal items within verified university communities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

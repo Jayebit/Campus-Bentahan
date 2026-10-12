@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-forest-50: #f0fdf4;
+  --color-forest-100: #dcfce7;
+  --color-forest-200: #bbf7d0;
+  --color-forest-300: #86efac;
+  --color-forest-400: #4ade80;
+  --color-forest-500: #22c55e;
+  --color-forest-600: #16a34a;
+  --color-forest-700: #15803d;
+  --color-forest-800: #166534;
+  --color-forest-900: #14532d;
+  --color-forest-950: #052e16;
+
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+
+  /* Remap indigo classes across the application directly to deep Forest Green */
+  --color-indigo-50: #f0fdf4;
+  --color-indigo-100: #dcfce7;
+  --color-indigo-200: #bbf7d0;
+  --color-indigo-300: #86efac;
+  --color-indigo-400: #34d399;
+  --color-indigo-500: #15803d;
+  --color-indigo-600: #166534; /* Classic Collegiate Forest Green */
+  --color-indigo-700: #14532d; /* Deep Forest Green */
+  --color-indigo-800: #0f3d23; /* Dark Forest Pine */
+  --color-indigo-900: #082f1a;
+  --color-indigo-950: #041f11;
+}
+
+@layer base {
+  html, body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Universal dark mode readability for form controls in Forest Green theme */
+  .dark input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="file"]):not([type="range"]),
+  .dark textarea,
+  .dark select {
+    color: #f8fafc !important;
+    background-color: #0f2d1e !important;
+    border-color: #1e4d35 !important;
+  }
+
+  .dark input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="file"]):not([type="range"]):focus,
+  .dark textarea:focus,
+  .dark select:focus {
+    color: #ffffff !important;
+    background-color: #0f2d1e !important;
+    border-color: #facc15 !important;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #86efac !important;
+    opacity: 0.6;
+  }
+
+  .dark select option {
+    background-color: #0f2d1e !important;
+    color: #f8fafc !important;
+  }
+}
+
+/* Custom scrollbar helpers for touch devices and clean UI */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
